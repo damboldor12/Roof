@@ -1,0 +1,1 @@
+<h2 style="width: 100%; margin:auto; text-align: center">404 сторінки не існує <br> Зв'яжіться з нами за контактами нижче:</h2>
