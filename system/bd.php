@@ -6,7 +6,7 @@ if (!isset($_SESSION['last_update']) || (time() - $_SESSION['last_update']) > 30
     // Підключення до бази даних
     $servername = "localhost";
     $username = "amshrxqk_roof";
-    $password = "1k2Ae!16iRGC;f";
+    $password = "*********";
     $dbname = "amshrxqk_roof";
     $conn = new mysqli($servername, $username, $password, $dbname);
 
