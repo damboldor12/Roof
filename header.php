@@ -37,6 +37,52 @@
 </head>
 
 <body>
+
+    <div onclick="hideSidebar()" id="shadow" class="shadow"></div>
+    <div id="side_panel" class="side_panel">
+        <span onclick="hideSidebar()" class="closeSidebar">Х</span>
+        <div class="side_panel_content">
+            <img src="img\have_fun.svg" alt="" style="width: 100%;">
+
+            <? if (isset($_SESSION['user'])) {
+            ?> <div class="side_panel_form">
+                    <button class="input" onclick="window.location.href='/new-position'">Додати нову позицію</button>
+                    <button class="input" onclick="window.location.href='/orders-admin'">Замовлення </button>
+                    <button class="input" onclick="logout()">Вихід</button>
+                </div>
+            <?
+            } else { ?>
+
+                <form id="auth" class="side_panel_form" action="/system/login.php" method="POST">
+                    <input class="input" type="email" placeholder="Email" name="email" required>
+                    <input class="input" type="password" placeholder="Пароль" name="password" required>
+                    <div class="side_panel_btn_box">
+                        <button type="submit" class="side_panel_btn">Увійти</button>
+                    </div>
+                    <input type="hidden" name="redirect" value="<? echo $_SERVER['REQUEST_URI'] ?>">
+                </form>
+
+
+
+                <form id="reg" class="side_panel_form" action="/system/reg.php" method="POST">
+                    <input class="input" placeholder="Email" type="email" name="email" required>
+                    <input class="input" placeholder="Пароль" type="password" name="password" required>
+                    <input class="input" placeholder="Ім'я" type="text" name="first_name" required>
+                    <input class="input" placeholder="Фамілія" type="text" name="last_name" required>
+                    <div class="side_panel_btn_box">
+                        <button type="submit" class="side_panel_btn">Реєстрація</button>
+                    </div>
+                </form>
+            <? } ?>
+        </div>
+        <div class="side_panel_show">
+            <? if (isset($_SESSION['user'])) {
+            ?>
+                <span class="side_panel_show_btn" onclick="showSidebar(this)"> Особистий кабінет </span>
+            <? } else { ?>
+                <span class="side_panel_show_btn" value="reg" onclick="showSidebar(this)"> Реєстрація </span> \ <span class="side_panel_show_btn" value="auth" onclick="showSidebar(this)">Вхід</span> <? } ?>
+        </div>
+    </div>
     <div class="header">
         <div class="header_left">
             <img onclick="menuswipe()" src="img/MenuBTN.svg" class="menu_btn"></img>

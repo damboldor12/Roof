@@ -390,3 +390,52 @@ function showCategory(categoryId, thisSwicher) {
   thisSwicher.classList.add("price-category-swicher-active");
 }
 
+function showSidebar(btn) {
+  const side_panel = document.getElementById("side_panel");
+  var authForm = document.getElementById("auth");
+  var regForm = document.getElementById("reg");
+  var shadow = document.getElementById("shadow");
+  var btnValue = btn.getAttribute("value");;
+  shadow.style.display = "block";
+  shadow.style.opacity = "1";
+  shadow.style.pointerEvents = "all";
+  side_panel.style.transform = "translate(0px, -50%)";
+  side_panel.style.transition = "transform 1s";
+  var allSidePanelShowBnt = document.getElementsByClassName("side_panel_show_btn");
+
+  for (var i = 0; i < allSidePanelShowBnt.length; i++) {
+    var element = allSidePanelShowBnt[i];
+    element.style.fontWeight = "normal";
+  }
+
+
+  if (btnValue == "reg") {
+    authForm.style.display = "none";
+    regForm.style.display = "flex";
+    btn.style.fontWeight = "bold";
+
+  }
+  else if (btnValue == "auth") {
+    regForm.style.display = "none";
+    authForm.style.display = "flex";
+    btn.style.fontWeight = "bold";
+  }
+  else {
+    btn.style.fontWeight = "bold";
+  }
+  
+}
+function hideSidebar() {
+  var regBtn = document.getElementById("reg_btn");
+  var authBtn = document.getElementById("auth_btn");
+  side_panel.style.transform = "translate(-300px, -50%)";
+  shadow.style.opacity = "0";
+  shadow.style.pointerEvents = "none";
+  var allSidePanelShowBnt = document.getElementsByClassName("side_panel_show_btn");
+
+  for (var i = 0; i < allSidePanelShowBnt.length; i++) {
+    var element = allSidePanelShowBnt[i];
+    element.style.fontWeight = "normal";
+  }
+
+}
