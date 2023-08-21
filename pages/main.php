@@ -10,7 +10,7 @@
             <div class="slider_screen">
                 <div class="slider_block">
                     <p class="slider_title">Нова колекція дріпів</p>
-                    <p class="slider_subtitle">Summer Heatss</p>
+                    <p class="slider_subtitle">Summer Heats</p>
                     <div class="slider_content">
                         <p class="slider_text">Серія дріп кави створена нагадати нам про життєву енергію, яка рухає та розвиває людство.</p>
                         <div class="slider_img_box">
