@@ -3,7 +3,7 @@
 // Підключення до бази даних
 $servername = "localhost";
 $username = "amshrxqk_roof";
-$password = "********";
+$password = "1k2Ae!16iRGC;f";
 $dbname = "amshrxqk_roof";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
